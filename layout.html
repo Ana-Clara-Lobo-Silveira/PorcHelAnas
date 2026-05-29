@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./static/carrinho.css">
+    <title>PorcHelAna`s</title>
+
+
+    </head>
+  <body>
+
+  <!-- Header e Navbar -->
+    <header class="header">
+      <div class="header__container">
+        <a href="#" class="header__logo">PorcHelAna`s</a>
+
+        <nav class="header__nav">
+          <ul class="header__menu">
+            <li class="header__item">
+              <a href="#" class="header__link">Xícaras</a>
+            </li>
+            <li class="header__item">
+              <a href="#menu" class="header__link">Bules</a>
+            </li>
+            <li class="header__item">
+              <a href="#" class="header__link">Decoração</a>
+            </li>
+            <li class="header__item">
+              <a href="#" class="header__link">Pratos</a>
+            </li>
+            <li class="header__item">
+              <a href="#" class="header__link">Conjuntos</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header__social">
+            <button class="header__toggle">
+          <img src="img/user.png" alt="usuario">
+        </button>
+
+        <button class="header__toggle">
+          <img src="img/shopping-cart.png" alt="carrinho">
+        </button>
+
+        </div>
+    </header>
+
+
+     <aside class="cart" id="cart"></aside>
+         <div class="cart__header">
+        <strong style="color: #6B9477;">Carrinho de Compra</strong>
+        <span onclick="toggleCart()" style="cursor:pointer; color: #F8F3EA">✖</span>
+      </div>
+
+      <div class="cart__items" id="cart-items">
+        <!-- Itens vão aqui -->
+        
+      </div>
+
+        <button class="cart__btn">
+        Finalizar Pedido
+        </button>
+      </div>
+         
+    </aside>
+
+
+    <!-- Rodapé -->
+    <footer class="footer">
+      <p class="footer__text">
+        PorcHelAna © 2026. Todos os direitos reservados.
+      </p>
+    </footer>
+
+    <script>
+      function toggleCart() {
+          const cart = document.getElementById("cart");
+          cart.classList.toggle("active");
+          mostrar_carrinho()
+      }
+
+
+

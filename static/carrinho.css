@@ -1,0 +1,64 @@
+.cart {
+  position: fixed;
+  top: 0;
+  right: -350px; /* Começa escondido para fora da tela */
+  width: 350px;
+  height: 100vh;
+  background-color: #F7D8CA; /* Fundo principal suave */
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: right 0.3s ease-in-out; /* Animação suave ao abrir */
+  z-index: 1000;
+  font-family: sans-serif;
+}
+
+/* Quando o carrinho estiver ativo/aberto */
+.cart.active {
+  right: 0;
+}
+
+/* Cabeçalho do Carrinho */
+.cart__header {
+  background-color: #6B9477; /* Verde como destaque no topo */
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.cart__header strong {
+  color: #F8F3EA !important; /* Ajustado para legibilidade no fundo verde */
+}
+
+/* Área dos Itens (com rolagem se houver muitos produtos) */
+.cart__items {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #F7D8CA; 
+}
+
+/* Botão de Finalizar Pedido */
+.cart__btn {
+  background-color: #6B9477; /* Verde principal */
+  color: #F8F3EA; /* Texto claro */
+  border: none;
+  padding: 15px 20px;
+  margin: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Efeito de Hover no Botão */
+.cart__btn:hover {
+  background-color: #55765e; /* Um tom mais escuro de verde para o hover */
+}
+
+.cart__btn:active {
+  transform: scale(0.98); /* Efeito de clique */
+}
