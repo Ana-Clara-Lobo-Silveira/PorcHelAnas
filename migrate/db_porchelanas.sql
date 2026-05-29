@@ -2,7 +2,7 @@ CREATE DATABASE porchelanas;
 USE porchelanas;
 
 CREATE TABLE cadastro (
- email VARCHAR(100) NOT NULL,
+ email VARCHAR(100) NOT NULL PRIMARY KEY,
  nome_completo VARCHAR(150),
  telefone VARCHAR(15),
  endereco VARCHAR(200),
@@ -10,7 +10,6 @@ CREATE TABLE cadastro (
 );
 
 
-ALTER TABLE cadastro ADD CONSTRAINT PK_cadastro PRIMARY KEY (email);
 
 
 CREATE TABLE IF NOT EXISTS carrinho (
@@ -18,19 +17,17 @@ CREATE TABLE IF NOT EXISTS carrinho (
  email VARCHAR(100)
 );
 
-ALTER TABLE carrinho ADD CONSTRAINT PK_carrinho PRIMARY KEY (cod_carrinho);
 
 
 CREATE TABLE IF NOT EXISTS categoria (
- id_categoria INT auto_increment NOT NULL,
+ id_categoria INT auto_increment NOT NULL PRIMARY KEY,
  nome_categoria VARCHAR(50)
 );
 
-ALTER TABLE categoria ADD CONSTRAINT PK_categoria PRIMARY KEY (id_categoria);
 
 
 CREATE TABLE IF NOT EXISTS produtos (
- id_produto INT auto_increment NOT NULL,
+ id_produto INT auto_increment NOT NULL PRIMARY KEY,
  nome_produto VARCHAR(100),
  descricao_produto VARCHAR(200),
  preco FLOAT,
@@ -39,21 +36,18 @@ CREATE TABLE IF NOT EXISTS produtos (
 );
 
 
-ALTER TABLE produtos ADD CONSTRAINT PK_produtos PRIMARY KEY (id_produto);
-
 
 CREATE TABLE IF NOT EXISTS comentarios (
- cod_comentario INT auto_increment NOT NULL,
+ cod_comentario INT auto_increment NOT NULL PRIMARY KEY,
  id_produto INT,
  comentario VARCHAR(300),
  nome_completo VARCHAR(50)
 );
 
-ALTER TABLE comentarios ADD CONSTRAINT PK_comentarios PRIMARY KEY (cod_comentario);
 
 
 CREATE TABLE IF NOT EXISTS itens_carrinho (
- cod_item INT auto_increment NOT NULL,
+ cod_item INT auto_increment NOT NULL PRIMARY KEY,
  id_produto INT,
  quantidade INT,
  cod_carrinho INT
