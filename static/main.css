@@ -1,0 +1,147 @@
+
+
+/* -------------------------------------------
+   PALETA EQUILIBRADA: FOCO EM TERRACOTA E CREME
+   ------------------------------------------- */
+:root {
+    --fundo-creme: #FAF6EE;      /* Base principal: suave e orgânica */
+    --detalhe-terracota: #C1815B; /* Elementos de destaque e títulos */
+    --bronze-suave: #A26F3E;      /* Preços e detalhes finos */
+    --azul-acento: #165f86;       /* Azul apenas para toques pontuais */
+    --texto-suave: #625D55;       /* Cinza quente para leitura confortável */
+    --branco-puro: #FFFFFF;
+}
+
+/* -------------------------------------------
+   ESTILOS GERAIS
+   ------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--fundo-creme);
+    color: var(--texto-suave);
+    line-height: 1.6;
+}
+
+/* -------------------------------------------
+   HEADER (Leve e Elegante)
+   ------------------------------------------- */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--branco-puro); /* Header agora é branco para leveza */
+    padding: 20px;
+    width: 100vw;
+    border-bottom: 2px solid var(--detalhe-terracota); /* Linha fina terracota */
+}
+
+.header__container {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    color: var(--detalhe-terracota); /* Logo em terracota para calor visual */
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    font-size: 28px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.header__menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.header__link {
+    color: var(--texto-suave);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.header__link:hover {
+    color: var(--azul-acento); /* O azul aparece suavemente no hover */
+}
+
+.header__social {
+    display: flex;
+    gap: 10px;
+}
+
+.header__toggle {
+    background: var(--azul-acento); /* Círculo azul pequeno nos ícones */
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header__toggle img {
+    width: 18px;
+    filter: brightness(0) invert(1); /* Ícones brancos dentro do azul */
+}
+
+/* -------------------------------------------
+   CARRINHO E BOTÕES
+   ------------------------------------------- */
+.cart {
+    position: fixed;
+    right: -350px;
+    top: 0;
+    width: 350px;
+    height: 100%;
+    background: var(--fundo-creme);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.05);
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    padding: 30px;
+}
+
+.cart.active {
+    right: 0;
+}
+
+.cart__header strong {
+    color: var(--detalhe-terracota) !important;
+}
+
+.cart__btn {
+    background: var(--detalhe-terracota);
+    color: white;
+    border: none;
+    padding: 18px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* -------------------------------------------
+   FOOTER
+   ------------------------------------------- */
+.footer {
+    background: var(--fundo-creme);
+    color: var(--texto-suave);
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid var(--detalhe-terracota);
+}

@@ -4,7 +4,7 @@
   right: -350px; /* Começa escondido para fora da tela */
   width: 350px;
   height: 100vh;
-  background-color: #F7D8CA; /* Fundo principal suave */
+  background-color: #b2dff8; /* Fundo principal suave */
   box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
@@ -20,7 +20,7 @@
 
 /* Cabeçalho do Carrinho */
 .cart__header {
-  background-color: #6B9477; /* Verde como destaque no topo */
+  background-color: #bac1cc; /* Verde como destaque no topo */
   padding: 20px;
   display: flex;
   justify-content: space-between;
@@ -42,7 +42,7 @@
 
 /* Botão de Finalizar Pedido */
 .cart__btn {
-  background-color: #6B9477; /* Verde principal */
+  background-color: #d6b78e; /* Verde principal */
   color: #F8F3EA; /* Texto claro */
   border: none;
   padding: 15px 20px;
