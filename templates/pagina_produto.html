@@ -1,4 +1,8 @@
-
+{% extends 'layout.html' %}
+{% block style %}
+<link rel="stylesheet" href="/css/pagina_de_produto.css">
+{% endblock %}
+{% block content %}
 <body>
 
     <div class="produto-container">
@@ -38,15 +42,6 @@
         <div class="produto-detalhes">
             <span class="produto-categoria">Porcelanas</span>
             <h1 class="produto-nome">Aparelho de Jantar Orquídeas Rouge</h1>
-            
-            <div class="produto-estrelas">
-                <i class="fa-solid fa-star estrela-acesa"></i>
-                <i class="fa-solid fa-star estrela-acesa"></i>
-                <i class="fa-solid fa-star estrela-acesa"></i>
-                <i class="fa-solid fa-star estrela-acesa"></i>
-                <i class="fa-solid fa-star estrela-apagada"></i>
-                <span class="nota-texto">(4.0)</span>
-            </div>
 
             <p class="produto-descricao">
                 Lindo aparelho de jantar em porcelana fina com ilustrações detalhadas de orquídeas em tom rouge. Uma peça exclusiva que une sofisticação e resistência para momentos especiais.
@@ -84,3 +79,4 @@
         </div>
 
     </div>
+{% endblock %}
