@@ -5,17 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PorcHelAna's</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="/static/main.css">
 </head>
 <body>
-    <header></header>
+ <header class="header">
+      <div class="header__container">
+        <a href="#" class="header__logo">PorcHelAna`s</a>
+
+        <nav class="header__nav">
+          <ul class="header__menu">
+            <li class="header__item">
+              <a href="#" class="header__link">Xícaras</a>
+            </li>
+            <li class="header__item">
+              <a href="#menu" class="header__link">Bules</a>
+            </li>
+            <li class="header__item">
+              <a href="#" class="header__link">Decoração</a>
+            </li>
+            <li class="header__item">
+              <a href="#" class="header__link">Pratos</a>
+            </li>
+            <li class="header__item">
+              <a href="#" class="header__link">Conjuntos</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header__social">
+            <button class="header__toggle">
+          <img src="img/user.png" alt="usuario">
+        </button>
+
+        <button class="header__toggle">
+          <img src="img/shopping-cart.png" alt="carrinho">
+        </button>
+
+        </div>
+    </header>
     <main>
         <section class="content-wrapper">
             {% block content %}
             {% endblock %}
         </section>
     </main>
-    <footer></footer>
+    <footer>
+
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
