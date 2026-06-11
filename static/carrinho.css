@@ -1,16 +1,19 @@
+/* ==========================================================================
+   CARRINHO (Estilo Moderno e Sofisticado - Baseado na Paleta de Azuis e Bege)
+   ========================================================================== */
 .cart {
   position: fixed;
   top: 0;
   right: -350px; /* Começa escondido para fora da tela */
   width: 350px;
   height: 100vh;
-  background-color: #b2dff8; /* Fundo principal suave */
-  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  background-color: #F6EDDF; /* Creme: fundo aquecido e elegante (#F6EDDF) */
+  box-shadow: -5px 0 15px rgba(30, 47, 59, 0.08); /* Sombra sutil baseada no azul escuro */
   display: flex;
   flex-direction: column;
   transition: right 0.3s ease-in-out; /* Animação suave ao abrir */
   z-index: 1000;
-  font-family: sans-serif;
+  font-family: 'Georgia', serif; /* Mantida a fonte serifada para o tom clássico/elegante */
 }
 
 /* Quando o carrinho estiver ativo/aberto */
@@ -20,16 +23,17 @@
 
 /* Cabeçalho do Carrinho */
 .cart__header {
-  background-color: #bac1cc; /* Verde como destaque no topo */
+  background-color: #5e798d; /* Azul Marinho Profundo como grande protagonista no topo (#1E2F3B) */
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 1.2rem;
+  border-bottom: 2px solid #D9C1A7; /* Linha divisória sutil em Bege (#D9C1A7) */
 }
 
 .cart__header strong {
-  color: #F8F3EA !important; /* Ajustado para legibilidade no fundo verde */
+  color: #F6EDDF !important; /* Texto em Creme para legibilidade impecável sobre o azul escuro */
 }
 
 /* Área dos Itens (com rolagem se houver muitos produtos) */
@@ -37,28 +41,30 @@
   flex: 1;
   padding: 20px;
   overflow-y: auto;
-  background-color: #F7D8CA; 
+  background-color: #F6EDDF; /* Mantém o Creme para destacar os produtos */
 }
 
 /* Botão de Finalizar Pedido */
 .cart__btn {
-  background-color: #d6b78e; /* Verde principal */
-  color: #F8F3EA; /* Texto claro */
+  background-color: #1E2F3B; /* Azul Escuro: o contraste perfeito e imponente que convida ao clique */
+  color: #F6EDDF; /* Texto claro em Creme */
   border: none;
   padding: 15px 20px;
   margin: 20px;
   font-size: 1rem;
   font-weight: bold;
-  border-radius: 8px;
+  border-radius: 4px; /* Bordas levemente menos arredondadas para manter a elegância */
   cursor: pointer;
+  text-transform: uppercase; /* Deixa o botão de chamada para ação mais imponente */
+  letter-spacing: 1px;
   transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 /* Efeito de Hover no Botão */
 .cart__btn:hover {
-  background-color: #55765e; /* Um tom mais escuro de verde para o hover */
+  background-color: #5B87A1; /* Transiciona para o Azul Médio ao passar o mouse, criando uma reação suave (#5B87A1) */
 }
 
 .cart__btn:active {
-  transform: scale(0.98); /* Efeito de clique */
+  transform: scale(0.98); /* Efeito clássico de clique */
 }

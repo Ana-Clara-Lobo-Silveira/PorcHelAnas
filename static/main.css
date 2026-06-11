@@ -1,15 +1,15 @@
 
 
 /* -------------------------------------------
-   PALETA EQUILIBRADA: FOCO EM TERRACOTA E CREME
+   PALETA REFINADA: INSPIRADA NA IMAGEM ENVIADA
    ------------------------------------------- */
 :root {
-    --fundo-creme: #FAF6EE;      /* Base principal: suave e orgânica */
-    --detalhe-terracota: #C1815B; /* Elementos de destaque e títulos */
-    --bronze-suave: #A26F3E;      /* Preços e detalhes finos */
-    --azul-acento: #165f86;       /* Azul apenas para toques pontuais */
-    --texto-suave: #625D55;       /* Cinza quente para leitura confortável */
-    --branco-puro: #FFFFFF;
+    --fundo-creme: #F6EDDF;       /* O tom off-white caloroso do fundo (#F6EDDF) */
+    --bege-suave: #D9C1A7;        /* Tom de bege médio para bordas e detalhes (#D9C1A7) */
+    --azul-claro: #93a5b3;        /* Azul claro para blocos ou fundos secundários (#C4D8E6) */
+    --azul-medio: #5B87A1;        /* Azul intermediário elegante para hover e acentos (#5B87A1) */
+    --azul-escuro: #85a1b6cc;       /* Azul marinho profundo para títulos, logo e botões (#1E2F3B) */
+    --branco-puro: #FFFFFF;       /* Mantido para contraste em cards ou blocos limpos */
 }
 
 /* -------------------------------------------
@@ -24,7 +24,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--fundo-creme);
-    color: var(--texto-suave);
+    color: var(--azul-escuro); /* Texto principal adaptado para leitura fluida no creme */
     line-height: 1.6;
 }
 
@@ -35,10 +35,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--branco-puro); /* Header agora é branco para leveza */
+    background: var(--branco-puro); 
     padding: 20px;
     width: 100vw;
-    border-bottom: 2px solid var(--detalhe-terracota); /* Linha fina terracota */
+    border-bottom: 1px solid var(--bege-suave); /* Linha fina e sutil usando o bege */
 }
 
 .header__container {
@@ -50,8 +50,8 @@ body {
 }
 
 .header__logo {
-    color: var(--detalhe-terracota); /* Logo em terracota para calor visual */
-    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    color: var(--azul-escuro); /* Logo imponente com o azul escuro */
+    font-family: 'Georgia', serif; 
     font-size: 28px;
     text-decoration: none;
     font-weight: bold;
@@ -65,7 +65,7 @@ body {
 }
 
 .header__link {
-    color: var(--texto-suave);
+    color: var(--azul-escuro);
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
@@ -74,7 +74,7 @@ body {
 }
 
 .header__link:hover {
-    color: var(--azul-acento); /* O azul aparece suavemente no hover */
+    color: var(--azul-medio); /* O azul médio aparece elegantemente no hover */
 }
 
 .header__social {
@@ -83,7 +83,7 @@ body {
 }
 
 .header__toggle {
-    background: var(--azul-acento); /* Círculo azul pequeno nos ícones */
+    background: var(--azul-escuro); /* Mudado para o azul escuro para manter o contraste */
     border: none;
     width: 40px;
     height: 40px;
@@ -92,11 +92,16 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: background 0.3s;
+}
+
+.header__toggle:hover {
+    background: var(--azul-medio); /* Transição suave para o azul médio ao interagir */
 }
 
 .header__toggle img {
     width: 18px;
-    filter: brightness(0) invert(1); /* Ícones brancos dentro do azul */
+    filter: brightness(0) invert(1);
 }
 
 /* -------------------------------------------
@@ -113,6 +118,7 @@ body {
     transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1000;
     padding: 30px;
+    border-left: 1px solid var(--bege-suave);
 }
 
 .cart.active {
@@ -120,11 +126,12 @@ body {
 }
 
 .cart__header strong {
-    color: var(--detalhe-terracota) !important;
+    color: var(--azul-escuro) !important;
 }
 
+/* Botão de conversão (Compra) ganha destaque com o Azul Escuro e transiciona para o Médio */
 .cart__btn {
-    background: var(--detalhe-terracota);
+    background: var(--azul-escuro);
     color: white;
     border: none;
     padding: 18px;
@@ -133,6 +140,11 @@ body {
     font-weight: bold;
     border-radius: 8px;
     margin-top: 20px;
+    transition: background 0.3s;
+}
+
+.cart__btn:hover {
+    background: var(--azul-medio);
 }
 
 /* -------------------------------------------
@@ -140,8 +152,8 @@ body {
    ------------------------------------------- */
 .footer {
     background: var(--fundo-creme);
-    color: var(--texto-suave);
+    color: var(--azul-escuro);
     text-align: center;
     padding: 40px;
-    border-top: 1px solid var(--detalhe-terracota);
+    border-top: 1px solid var(--bege-suave);
 }
