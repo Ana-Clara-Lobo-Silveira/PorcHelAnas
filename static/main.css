@@ -1,0 +1,159 @@
+
+
+/* -------------------------------------------
+   PALETA REFINADA: INSPIRADA NA IMAGEM ENVIADA
+   ------------------------------------------- */
+:root {
+    --fundo-creme: #F6EDDF;       /* O tom off-white caloroso do fundo (#F6EDDF) */
+    --bege-suave: #D9C1A7;        /* Tom de bege médio para bordas e detalhes (#D9C1A7) */
+    --azul-claro: #93a5b3;        /* Azul claro para blocos ou fundos secundários (#C4D8E6) */
+    --azul-medio: #5B87A1;        /* Azul intermediário elegante para hover e acentos (#5B87A1) */
+    --azul-escuro: #85a1b6cc;       /* Azul marinho profundo para títulos, logo e botões (#1E2F3B) */
+    --branco-puro: #FFFFFF;       /* Mantido para contraste em cards ou blocos limpos */
+}
+
+/* -------------------------------------------
+   ESTILOS GERAIS
+   ------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--fundo-creme);
+    color: var(--azul-escuro); /* Texto principal adaptado para leitura fluida no creme */
+    line-height: 1.6;
+}
+
+/* -------------------------------------------
+   HEADER (Leve e Elegante)
+   ------------------------------------------- */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--branco-puro); 
+    padding: 20px;
+    width: 100vw;
+    border-bottom: 1px solid var(--bege-suave); /* Linha fina e sutil usando o bege */
+}
+
+.header__container {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    color: var(--azul-escuro); /* Logo imponente com o azul escuro */
+    font-family: 'Georgia', serif; 
+    font-size: 28px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.header__menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.header__link {
+    color: var(--azul-escuro);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.header__link:hover {
+    color: var(--azul-medio); /* O azul médio aparece elegantemente no hover */
+}
+
+.header__social {
+    display: flex;
+    gap: 10px;
+}
+
+.header__toggle {
+    background: var(--azul-escuro); /* Mudado para o azul escuro para manter o contraste */
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.header__toggle:hover {
+    background: var(--azul-medio); /* Transição suave para o azul médio ao interagir */
+}
+
+.header__toggle img {
+    width: 18px;
+    filter: brightness(0) invert(1);
+}
+
+/* -------------------------------------------
+   CARRINHO E BOTÕES
+   ------------------------------------------- */
+.cart {
+    position: fixed;
+    right: -350px;
+    top: 0;
+    width: 350px;
+    height: 100%;
+    background: var(--fundo-creme);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.05);
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    padding: 30px;
+    border-left: 1px solid var(--bege-suave);
+}
+
+.cart.active {
+    right: 0;
+}
+
+.cart__header strong {
+    color: var(--azul-escuro) !important;
+}
+
+/* Botão de conversão (Compra) ganha destaque com o Azul Escuro e transiciona para o Médio */
+.cart__btn {
+    background: var(--azul-escuro);
+    color: white;
+    border: none;
+    padding: 18px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+
+.cart__btn:hover {
+    background: var(--azul-medio);
+}
+
+/* -------------------------------------------
+   FOOTER
+   ------------------------------------------- */
+.footer {
+    background: var(--fundo-creme);
+    color: var(--azul-escuro);
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid var(--bege-suave);
+}
