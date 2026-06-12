@@ -22,6 +22,7 @@ def pg_cadastro():
     endereco = request.form.get("endereco")
     senha = request.form.get("senha")
     if cadastro(nome_completo, email, telefone, endereco, senha):
+        
         return redirect("/")
     else:
         return render_template("cadastro.html")
