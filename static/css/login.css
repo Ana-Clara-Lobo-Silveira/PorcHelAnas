@@ -74,6 +74,14 @@
     font-family: 'Georgia', serif; 
     cursor: pointer;
 }
+.link__cadastro{
+    display: flex;
+    justify-content: center;
+}
+.main__content a {
+    font-size: small;
+}
+
 .main__content label{
     color: #42677c;
 }
