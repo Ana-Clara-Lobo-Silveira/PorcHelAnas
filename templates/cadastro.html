@@ -8,20 +8,26 @@
 </head>
 <main>
     <section class="main__container">
-    <div class="img-login">
-        <img src="" alt="">
+    <div class="img__login">
+        <img src="../static/img/img_cadastro.png" alt="">
     </div>
     <div class="main__content">
         <form action="", method="post">
+        <label>Nome completo:</label>
+        <input type="text" name="nome" placeholder="Ex: Maria Calafati Silveira">
         
-        <label>Usuário:</label>
-        <input type="text" name="usuario">
+        <label>Email:</label>
+        <input type="text" name="email" placeholder="Ex: maria.c.s@gmail.com">
+
+        <label>Telefone:</label>
+        <input type="text" name="telefone" placeholder="Ex: (00) 00000-0000">
+
+        <label>Endereço:</label>
+        <input type="text" name="endereco" placeholder="Ex: Rua Hugo Negrini, 60 - Vila Bela Vista">
         
         <label>Senha:</label>
         <input type="password" name="senha">
         
-        <label>Nome:</label>
-        <input type="text" name="nome">
         <button type="submit">Cadastre-se</button>
     </form>
     </div>

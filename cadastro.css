@@ -1,12 +1,89 @@
-.main__container{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Transforma o contêiner em um layout flexível ocupando toda a tela */
+.main__container {
+    display: flex;
+    width: 100vw;
     height: 100vh;
-    width: 100%;
 }
-.main__content{
-    padding: 40px;
-    background-color:#F6EDDF; 
+
+/* Faz com que a div da imagem ocupe metade da tela (50%) */
+.img__login {
+    flex: 0 0 40%;
+    background-color: #f0f0f0; 
+    
+    /* MODIFICAÇÃO AQUI: */
+    overflow: hidden; /* Esconde o que sobrar da imagem nas laterais */
 }
-.main__content form{
+
+/* Garante que a imagem se ajuste bem ao espaço */
+.img__login img {
+    /* MODIFICAÇÕES AQUI: */
+    width: 100%;            /* Permite que ela cresça na largura se necessário */
+    height: 100%;           /* Obriga a imagem a ocupar TODA a altura da div */
+    object-fit: cover;      /* Preenche o espaço cortando as sobras sem distorcer */
+    object-position: center;/* Centraliza o corte (foca no meio da imagem) */
+}
+
+/* Faz com que a div do formulário ocupe a outra metade da tela (50%) */
+.main__content {
+    flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: center; /* Centraliza o formulário verticalmente */
+    align-items: center;     /* Centraliza o formulário horizontalmente */
+    padding: 20px;
+    background-color: #789cc2;   ;
+
+}
+
+/* Estilização básica do formulário para não ficar bagunçado */
+.main__content form {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    background-color: #a2c1e4;
+    padding: 50px;
+    font-size: 30px;
+    font-family: 'Georgia', serif; 
+    border-radius: 15px;
+    gap: 10px;
+}
+
+.main__content input{
+    background-color: #fff9ef;
+    color: #46555e;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: large;
+    font-family: 'Georgia', serif; 
+}
+.main__content button{
+    background-color: #fff9ef;
+    color: #5B87A1;
+    border: none;
+    border-radius: 5px;
+    margin-top: 30px;
+    padding: 15px;
+    font-size: large;
+    font-family: 'Georgia', serif; 
+    cursor: pointer;
+}
+.main__content label{
+    color: #42677c;
+}
+.main__content button:hover{
+    background-color: #ffffff;
+    color: #5B87A1;
+}
+
+.main__content label, 
+.main__content input, 
+.main__content button {
+    margin-bottom: 15px;
 }
