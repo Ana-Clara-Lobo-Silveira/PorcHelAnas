@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block style %}
-<link rel="stylesheet" href="/css/pagina_de_produto.css">
+<link rel="stylesheet" href="/static/css/pagina_de_produto.css">
 {% endblock %}
 {% block content %}
 <body>
@@ -11,23 +11,19 @@
             <div id="carrosselProduto" class="carousel slide" data-bs-ride="carousel">
                 
                 <div class="carousel-indicators">
-                    {% for imagem in produto.imagens %}
                         <button type="button" 
                             data-bs-target="#carrosselProduto" 
-                            data-bs-slide-to="{{ loop.index0 }}" 
-                            class="{% if loop.first %}active{% endif %}" 
-                            aria-current="{% if loop.first %}true{% endif %}" 
-                            aria-label="Slide {{ loop.index }}">
+                            data-bs-slide-to="1" 
+                            class="active" 
+                            aria-current="true" 
+                            aria-label="Slide 1">
                         </button>
-                    {% endfor %}
                 </div>
 
                 <div class="carousel-inner">
-                    {% for imagem in produto.imagens %}
-                    <div class="carousel-item {% if loop.first %}active{% endif %}">
-                        <img src="{{ imagem.imagem_produto }}" class="d-block w-100" alt="{{produto.nome_produto}}">
+                    <div class="carousel-item active">
+                        <img src="{{ produto.imagem_produto }}" class="d-block w-100" alt="{{produto.nome_produto}}">
                     </div>
-                     {% endfor %}
 
 
                 <button class="carousel-control-prev" type="button" data-bs-target="#carrosselProduto" data-bs-slide="prev">
@@ -47,7 +43,7 @@
             <h1 class="produto-nome">{{produto.nome_produto}}</h1>
 
             <p class="produto-descricao">
-                Lindo aparelho de jantar em porcelana fina com ilustrações detalhadas de orquídeas em tom rouge. Uma peça exclusiva que une sofisticação e resistência para momentos especiais.
+            {{produto.descricao_produto}}
             </p>
             
             <div class="produto-compra-container">
@@ -64,7 +60,7 @@
             
             <div class="produto-comentarios">
                 <h3>Comentários dos Clientes</h3>
-                {% for comentario in produto.comentarios %}
+                {% for comentario in comentarios %}
                 <div class="comentario-item">
                     <div class="comentario-header">
                         <strong class="comentario-autor">{{comentario.nome_completo}}</strong>

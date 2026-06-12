@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, session, flash, jsonify
+from model.pagina_produto import recupera_produto
 
 app = Flask(__name__)
 @app.route("/")
@@ -7,7 +8,9 @@ def pagina_inicial():
 
 @app.route("/pagina_produto")
 def pagina_produto():
-    return render_template("pagina_produto.html")
+    produto = recupera_produto()
+    comentarios = []
+    return render_template("pagina_produto.html", produto = produto, comentarios = comentarios)
 
 
 if __name__ == "__main__":
