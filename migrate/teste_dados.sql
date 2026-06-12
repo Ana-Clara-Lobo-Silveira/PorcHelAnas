@@ -29,3 +29,6 @@ VALUES
 SELECT * FROM cadastro;
 SELECT * FROM produtos;
 SELECT * FROM itens_carrinho;
+
+
+select nome_produto, descricao_produto, preco, imagem_produto, id_categoria from produtos where id_produto = 3;
