@@ -1,12 +1,36 @@
-{% extends 'layout.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/cadastro.css">
+</head>
+<main>
+    <section class="main__container">
+    <div class="img__login">
+        <img src="../static/img/img_cadastro.png" alt="">
+    </div>
+    <div class="main__content">
+        <form action="", method="post">
+        <label>Nome completo:</label>
+        <input type="text" name="nome" placeholder="Ex: Maria Calafati Silveira">
+        
+        <label>Email:</label>
+        <input type="text" name="email" placeholder="Ex: maria.c.s@gmail.com">
 
-{% block style %}
-<!-- css pagina -->
-{% endblock %}
+        <label>Telefone:</label>
+        <input type="text" name="telefone" placeholder="Ex: (00) 00000-0000">
 
-{% block content %}
-
-<section class="main-container">
-    
-</section>
-{% endblock %}
+        <label>Endereço:</label>
+        <input type="text" name="endereco" placeholder="Ex: Rua Hugo Negrini, 60 - Vila Bela Vista">
+        
+        <label>Senha (até 10 caracteres):</label>
+        <input type="password" name="senha" maxlength="10">
+        
+        <button type="submit">Cadastre-se</button>
+    </form>
+    </div>
+</main>
+</body>
+</html>

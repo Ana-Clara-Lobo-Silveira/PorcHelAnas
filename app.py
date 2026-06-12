@@ -10,5 +10,9 @@ def pagina_produto():
     return render_template("pagina_produto.html")
 
 
+@app.route("/pagina_cadastro")
+def pagina_cadastro():
+    return render_template("cadastro.html")
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port="8080", debug=True)

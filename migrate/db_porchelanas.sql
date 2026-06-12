@@ -6,7 +6,7 @@ CREATE TABLE cadastro (
  nome_completo VARCHAR(150),
  telefone VARCHAR(15),
  endereco VARCHAR(200),
- senha VARCHAR(100)
+ senha VARCHAR(8)
 );
 
 
