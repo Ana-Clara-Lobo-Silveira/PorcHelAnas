@@ -1,6 +1,7 @@
-from database.conexao import Conexao
+from database.conexao import conectar
+
 def recupera_produto():
-    conexao,cursor = Conexao.conexao()
+    conexao,cursor = conectar()
     
     cursor.execute(""" SELECT nome_produto, descricao_produto, preco, imagem_produto, id_categoria
                    FROM produtos WHERE id_produto = ;""")
