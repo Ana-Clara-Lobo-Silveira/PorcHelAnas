@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, session, flash, jso
 from model.cadastro_login import cadastro
 from model.cadastro_login import login
 from model.cards import recupera_card
+from model.pagina_produto import recupera_produto
 app = Flask(__name__)
 app.secret_key = "PorcHelAnas"
 
@@ -11,11 +12,11 @@ def pagina_inicial():
     cards = recupera_card()
     return render_template("pagina_inicial.html",produto = cards)
 
-@app.route("/pagina_produto")
-def pagina_produto():
-    produto = recupera_card()
+@app.route("/pagina_produto/<id_produto>")
+def pagina_produto(id_produto):
+    produtos_u = recupera_produto(id_produto)
     comentarios = []
-    return render_template("pagina_produto.html", produto = produto, comentarios = comentarios)
+    return render_template("pagina_produto.html", produto = produtos_u, comentarios = comentarios)
 
 @app.route("/pagina_cadastro", methods = ["GET"])
 def pagina_cadastro():

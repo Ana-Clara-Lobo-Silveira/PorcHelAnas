@@ -37,6 +37,10 @@
         <img src="{{ produto.imagem_produto }}" alt="{{produto.nome_produto}}">
         <p><strong>Descrição:</strong>{{produto.descricao_produto}} </p>
         <p><strong>Preço:</strong>R${{produto.preco}}</p>
+        <a href="/pagina_produto/{{produto.id_produto}}">
+
+          <button>Comprar</button>
+        </a>
     </article>
 {%endfor%}
 </main>
