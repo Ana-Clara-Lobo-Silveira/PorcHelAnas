@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, redirect, session, flash, jsonify
 from model.cadastro_login import cadastro
-from model.cadastro_login import login
+from model.cadastro_login import login 
+from model.pagina_produto import recupera_produto
+
 app = Flask(__name__)
 app.secret_key = "PorcHelAnas"
 @app.route("/")
@@ -9,7 +11,9 @@ def pagina_inicial():
 
 @app.route("/pagina_produto")
 def pagina_produto():
-    return render_template("pagina_produto.html")
+    produto = recupera_produto()
+    comentarios = []
+    return render_template("pagina_produto.html", produto = produto, comentarios = comentarios)
 
 
 @app.route("/pagina_cadastro", methods = ["GET"])
