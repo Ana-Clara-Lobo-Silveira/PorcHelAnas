@@ -14,5 +14,6 @@ def pagina_produto():
 def pagina_cadastro():
     return render_template("cadastro.html")
 
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port="8080", debug=True)

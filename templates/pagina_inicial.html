@@ -1,6 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block style %}
+<link rel="stylesheet" href="static/carrosel_card.css">
 <!-- css pagina -->
 {% endblock %}
 
@@ -33,18 +34,12 @@
 <main class="principal">
         
     <article>
-        <h3>Xícara Florida</h3>
-        <img src="https://images.pexels.com/photos/8694772/pexels-photo-8694772.jpeg" alt="Xícara Florida">
-        <p><strong>Descrição:</strong> Uma delicada xícara de porcelana branca decorada com uma charmosa estampa de pequenas flores cor-de-rosa e folhagens verdes. O conjunto traz um pires combinando e um elegante acabamento com filete dourado que contorna as bordas onduladas.</p>
-        <p><strong>Preço:</strong> R$ 110,90</p>
+        <h3>{{produto.nome_produto}}</h3>
+        <img src="{{ produto.imagem_produto }}" alt="{{produto.nome_produto}}">
+        <p><strong>Descrição:</strong>{{produto.descricao_produto}} </p>
+        <p><strong>Preço:</strong>R${{produto.preco}}</p>
     </article>
 
 </main>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/dist/js/bootstrap.bundle.min.js"></script>
-
-<link rel="stylesheet" href="static/carrosel_card.css">
-
-</html>
 
 {% endblock %}
