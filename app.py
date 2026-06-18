@@ -1,20 +1,21 @@
 from flask import Flask, render_template, request, redirect, session, flash, jsonify
 from model.cadastro_login import cadastro
-from model.cadastro_login import login 
-from model.pagina_produto import recupera_produto
-
+from model.cadastro_login import login
+from model.cards import recupera_card
 app = Flask(__name__)
 app.secret_key = "PorcHelAnas"
+
+
 @app.route("/")
 def pagina_inicial():
-    return render_template("pagina_inicial.html")
+    cards = recupera_card()
+    return render_template("pagina_inicial.html",produto = cards)
 
 @app.route("/pagina_produto")
 def pagina_produto():
-    produto = recupera_produto()
+    produto = recupera_card()
     comentarios = []
     return render_template("pagina_produto.html", produto = produto, comentarios = comentarios)
-
 
 @app.route("/pagina_cadastro", methods = ["GET"])
 def pagina_cadastro():
@@ -49,6 +50,10 @@ def pg_login():
         return redirect("/")
     else:
         return redirect("/pagina_login")
+    
+
+
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port="8080", debug=True)
