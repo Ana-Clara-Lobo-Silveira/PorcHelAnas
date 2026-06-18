@@ -1,7 +1,8 @@
 import mysql.connector
 
+    # transforma em metodo estático, só precisa chama-lo
 
-def conexao():
+def conectar():
     conexao = mysql.connector.connect(
             host="localhost",
             port = 3306,
