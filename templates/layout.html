@@ -35,9 +35,16 @@
         </nav>
 
         <div class="header__social">
-            <button class="header__toggle">
-          <img src="img/user.png" alt="usuario">
-        </button>
+            {% if session.get('usuario_c') %}
+                <span>{{ session['usuario_c']['nome_completo'] }}</span>
+            {% else %}
+                <span>Visitante</span>
+            {% endif %}
+        <button class="header__toggle" >
+            <a href="/pagina_login">
+            <img src="img/user.png" alt="usuario">
+        </a> 
+    </button>
 
         <button class="header__toggle">
           <img src="img/shopping-cart.png" alt="carrinho">

@@ -11,3 +11,11 @@ def cadastro (nome_completo, email, telefone, endereco, senha):
     except Exception as erro:
         print(erro)
         return False
+    
+def login (email, senha) -> list:
+        con, cur  = conectar()
+        cur.execute("SELECT nome_completo, email, senha FROM cadastro WHERE  email = %s AND senha=%s", [email, senha])
+        login_executado = cur.fetchone()
+        con.close()
+
+        return login_executado

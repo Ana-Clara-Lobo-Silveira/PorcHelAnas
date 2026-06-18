@@ -170,7 +170,7 @@ body {
 .footer-wave {
     width: 100%;
     line-height: 0;
-    background-color: #145E86; /* Cor azul de fundo do site antes de começar o footer */
+    background-color: #85a1b6cc;   /* Cor azul de fundo do site antes de começar o footer */
 }
 
 .footer-wave svg {
@@ -203,7 +203,7 @@ body {
 .circulo-marca {
     width: 280px;
     height: 280px;
-    border: 1.5px solid #145E86; /* Borda fina em azul pavão */
+    border: 1.5px solid #85a1b6cc;  /* Borda fina em azul pavão */
     border-radius: 50%;
     display: flex;
     flex-direction: column;
@@ -252,7 +252,7 @@ body {
 .icone-cabecalho {
     width: 44px;
     height: 44px;
-    background-color: #145E86; /* Círculos azuis pequenos no topo das listas */
+    background-color: #85a1b6cc;   /* Círculos azuis pequenos no topo das listas */
     color: #FAF6EE;
     border-radius: 50%;
     display: flex;
@@ -263,7 +263,7 @@ body {
 }
 
 .col-links h3 {
-    color: #005F87;
+    color: #85a1b6cc;  
     font-size: 16px;
     font-weight: 800;
     letter-spacing: 1px;
@@ -296,7 +296,7 @@ body {
 .circulo-newsletter {
     width: 320px;
     height: 320px;
-    border: 1.5px solid #145E86;
+    border: 1.5px solid #85a1b6cc;  
     border-radius: 50%;
     display: flex;
     flex-direction: column;
@@ -378,7 +378,7 @@ body {
 
 .redes-sociais a:hover {
     transform: scale(1.1);
-    background-color: #145E86;
+    background-color: #85a1b6cc;  
 }
 
 /* --- BARRA INFERIOR DE DIREITOS --- */
@@ -409,7 +409,7 @@ body {
 }
 
 .bottom-links a:hover {
-    color: #145E86;
+    color: #85a1b6cc;  
 }
 
 .bottom-links span {
