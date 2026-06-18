@@ -1,8 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block style %}
-<link rel="stylesheet" href="static/carrosel_card.css">
-<!-- css pagina -->
+<link rel="stylesheet" href="/static/carrosel_card.css">
 {% endblock %}
 
 {% block content %}
@@ -32,14 +31,14 @@
 
 
 <main class="principal">
-        
+        {% for produto in produto%}
     <article>
         <h3>{{produto.nome_produto}}</h3>
         <img src="{{ produto.imagem_produto }}" alt="{{produto.nome_produto}}">
         <p><strong>Descrição:</strong>{{produto.descricao_produto}} </p>
         <p><strong>Preço:</strong>R${{produto.preco}}</p>
     </article>
-
+{%endfor%}
 </main>
 
 {% endblock %}
