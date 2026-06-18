@@ -13,8 +13,9 @@ def pagina_inicial():
 
 @app.route("/pagina_produto")
 def pagina_produto():
-    
-    return render_template("pagina_produto.html")
+    produto = recupera_card()
+    comentarios = []
+    return render_template("pagina_produto.html", produto = produto, comentarios = comentarios)
 
 @app.route("/pagina_cadastro", methods = ["GET"])
 def pagina_cadastro():
