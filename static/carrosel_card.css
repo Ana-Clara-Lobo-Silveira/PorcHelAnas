@@ -1,101 +1,129 @@
-
 /* Configurações Globais */
 * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #fbf7f0; /* Fundo areia suave */
-            color: #333;
-            overflow-x: hidden; /* Evita barras de rolagem horizontais indesejadas */
-        }
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #fbf7f0; /* Fundo areia suave */
+    color: #333;
+    overflow-x: hidden; /* Evita barras de rolagem horizontais indesejadas */
+}
 
-        /* Ajustes para o Carrossel ocupar a LARGURA TOTAL (100vw) */
-        #carouselExample {
-            width: 100vw;
-            margin-left: calc(-50vw + 50%);
-            left: 0%;
-            position: relative;
-            align-items: center;
-        }
+/* Ajustes para o Carrossel ocupar a LARGURA TOTAL (100vw) */
+#carouselExample {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    left: 0%;
+    position: relative;
+    align-items: center;
+}
 
-        .img_carrosel {
-            width: 200%;
-            height: 500px; /* Altura ideal e elegante para o banner de tela cheia */
-            object-fit: cover; /* Ajusta e corta as fotos do Pexels perfeitamente sem distorcer */
-            
-        }
+.img_carrosel {
+    width: 100%;       /* CORRIGIDO: Estava 200%, o que esticava a tela e quebrava o layout */
+    height: 500px;     /* Altura ideal e elegante para o banner de tela cheia */
+    object-fit: cover; /* Ajusta e corta as fotos perfeitamente sem distorcer */
+}
 
-        /* Estilização da Seção Principal e dos Cards */
-        .principal {
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 0 20px;
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            flex-wrap: wrap; /* Permite novos cards ficarem lado a lado automaticamente */
-        }
+/* Ajuste de altura do banner para celulares */
+@media (max-width: 768px) {
+    .img_carrosel {
+        height: 300px;
+    }
+}
 
-        /* Estilo do seu Article transformado em um Card Premium */
-        article {
-            background:#e9dad3;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-            max-width: 360px;
-            width: 100%;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+/* CORRIGIDO: Estilização da Seção Principal transformada em GRID estável */
+.principal {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    display: grid;
+    /* Cria colunas responsivas automáticas: mínimo 280px, máximo 1 fração do espaço */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
 
-        article:hover {
-            transform: translateY(-5px); /* Efeito sutil de flutuação ao passar o mouse */
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-        }
+/* Estilo do seu Article transformado em um Card Premium */
+article {
+    background: #e9dad3;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-        /* Título do produto dentro do card */
-        article h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.45rem;
-            color: #9c5c37; /* Tom marrom/terracota elegante */
-            padding: 25px 20px 15px 20px;
-            margin: 0;
-            font-weight: 600;
-        }
+article:hover {
+    transform: translateY(-5px); /* Efeito sutil de flutuação ao passar o mouse */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
 
-        /* Imagem do produto dentro do card */
-        article img {
-            width: 100%;
-            height: 260px;
-            object-fit: cover; /* Enquadra a foto da xícara perfeitamente */
-            display: block;
-        }
+/* Título do produto dentro do card */
+article h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.45rem;
+    color: #9c5c37; /* Tom marrom/terracota elegante */
+    padding: 25px 20px 15px 20px;
+    margin: 0;
+    font-weight: 600;
+}
 
-        /* Textos de descrição dentro do card */
-        article p {
-            font-size: 0.9rem;
-            color: #666;
-            line-height: 1.6;
-            padding: 20px 20px 0 20px;
-            margin: 0;
-        }
+/* Imagem do produto dentro do card */
+article img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover; /* Enquadra a foto da xícara perfeitamente */
+    display: block;
+}
 
-        /* Destaque exclusivo para a linha do preço */
-        article p:last-of-type {
-            font-size: 1.25rem;
-            color: #134b6e; /* Azul sofisticado para destacar o valor */
-            font-weight: 700;
-            margin-top: auto; /* Garante que o preço fique sempre alinhado na base do card */
-            padding-top: 15px;
-            padding-bottom: 25px;
-        }
+/* Textos de descrição dentro do card */
+article p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+    padding: 20px 20px 0 20px;
+    margin: 0;
+}
 
-        article strong {
-            color: #333;
-            font-weight: 600;
-        }
+/* Destaque exclusivo para a linha do preço */
+article p:last-of-type {
+    font-size: 1.25rem;
+    color: #134b6e; /* Azul sofisticado para destacar o valor */
+    font-weight: 700;
+    margin-top: auto; /* Garante que o preço fique sempre alinhado na base do card */
+    padding-top: 15px;
+    padding-bottom: 10px; /* Reduzido levemente para dar espaço ao botão */
+}
+
+article strong {
+    color: #333;
+    font-weight: 600;
+}
+
+/* NOVO: Estilização para o botão "Comprar" que estava sem estilo dentro do card */
+article a {
+    text-decoration: none;
+    padding: 0 20px 25px 20px;
+    margin-top: auto;
+}
+
+article button {
+    width: 100%;
+    background-color: #134b6e;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+article button:hover {
+    background-color: #0b3149;
+}
