@@ -46,6 +46,11 @@ def pg_login():
     else:
         return redirect("/pagina_login")
 
+@app.route("/logout")
+def logout():
+    session.clear()
+    return redirect("/")
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port="8080", debug=True)
 
