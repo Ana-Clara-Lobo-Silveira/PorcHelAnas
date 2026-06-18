@@ -5,12 +5,14 @@ body {
     margin: 0;
 }
 
-/* Caixa Mãe (Flexbox) */
 .produto-container {
+    max-width: 1200px;       /* Define uma largura máxima para o conteúdo não espalhar infinito */
+    margin: 40px auto;       /* 40px de espaço no topo/subida e 'auto' centraliza o bloco na tela */
+    padding: 0 20px;         /* Garante um espaço mínimo de 20px nas laterais para nunca grudar na borda */
+    
+    /* Caso você use display flex para alinhar o carrossel e o texto lado a lado */
     display: flex;
-    gap: 50px;
-    max-width: 1200px;
-    margin: 0 auto;
+    gap: 40px;               /* Dá um espaço bem legal entre a imagem e as informações do produto */
 }
 
 /* Lado Esquerdo: Carrossel (60% do espaço) */
