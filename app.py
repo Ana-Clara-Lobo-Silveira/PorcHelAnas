@@ -99,6 +99,8 @@ def pg_login():
     else:
         return redirect("/pagina_login")
     
+
+    
 @app.route("/logout")
 def logout():
     session.clear()
