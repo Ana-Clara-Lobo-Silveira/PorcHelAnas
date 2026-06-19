@@ -58,3 +58,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // Carrega os itens inicialmente se o carrinho já começar aberto
     atualizarCarrinhoVisual();
 });
+

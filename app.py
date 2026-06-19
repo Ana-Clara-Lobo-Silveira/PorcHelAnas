@@ -117,7 +117,7 @@ def adicionar_carrinho(id_produto):
     if "usuario_c" not in session:
         return redirect("/pagina_login")
     
-    email = session["email"]
+    email = session["usuario_c"]["email"]
     quantidade = 1 
     
     # Passo 1: Descobrimos o código do carrinho usando o e-mail
@@ -156,6 +156,7 @@ def meu_carrinho():
     
     # Transformamos os dados em JSON para o JavaScript conseguir ler
     return jsonify(itens)
+
 
 
 if __name__ == "__main__":
