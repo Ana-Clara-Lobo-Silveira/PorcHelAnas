@@ -95,7 +95,6 @@ body {
     font-weight: 800;
     margin: 0;
 }
-
 /* Botão Redondo do Carrinho */
 .botao-carrinho {
     background-color: #165f86; /* Verde Sálvia */
@@ -122,6 +121,7 @@ body {
     border-radius: 8px;
     padding: 24px;
     margin-top: 20px;
+
 }
 
 .produto-comentarios h3 {
@@ -129,6 +129,33 @@ body {
     margin-top: 0;
     margin-bottom: 16px;
     font-size: 20px;
+}
+/* ---- ADICIONA SCROLL APENAS NA LISTA DE COMENTÁRIOS ---- */
+/* ---- VERSÃO CORRIGIDA DO SCROLL ---- */
+.lista-comentarios-scroll {
+    display: block !important;    /* Força a div a se comportar como um bloco isolado */
+    height: 150px;                /* Altura fixa (mude para o tamanho que achar melhor) */
+    overflow-y: scroll !important; /* Força a barra de rolagem vertical a existir */
+    padding-right: 10px;          /* Espaço para o texto não colar na barra */
+}
+
+/* Customização opcional da barra de rolagem (Deixa ela combinando com seu layout azul) */
+.lista-comentarios-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.lista-comentarios-scroll::-webkit-scrollbar-track {
+    background: #F8F3EA; 
+    border-radius: 4px;
+}
+
+.lista-comentarios-scroll::-webkit-scrollbar-thumb {
+    background: #165f86; 
+    border-radius: 4px;
+}
+
+.lista-comentarios-scroll::-webkit-scrollbar-thumb:hover {
+    background: #0f4461; 
 }
 
 /* Div interna do comentário individual */

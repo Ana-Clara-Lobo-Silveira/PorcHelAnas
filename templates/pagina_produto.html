@@ -28,7 +28,7 @@
             </p>
             
             <div class="produto-compra-container">
-                <div class="produto-preco">{{produto.preco}}</div>
+                <div class="produto-preco"><p>R$ {{produto.preco}}</p></div>
                 
                 <button class="botao-carrinho" aria-label="Adicionar ao carrinho">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -54,14 +54,17 @@
                     <button type="submit" class="btn-enviar-comentario">Enviar comentário</button>
                     </div>
                 </form>
-                {% for comentario in comentarios %}
+                <div class="lista-comentarios-scroll">
+                                  {% for comentario in comentarios %}
                 <div class="comentario-item">
                     <div class="comentario-header">
                         <strong class="comentario-autor">{{comentario.nome_completo}}</strong>
                     </div>
                     <p class="comentario-texto">{{comentario.comentario}}</p>
                 </div>
-                {% endfor %}
+                {% endfor %}  
+                </div>
+
             </div>
         </div>
 
