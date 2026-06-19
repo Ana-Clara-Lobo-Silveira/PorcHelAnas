@@ -133,10 +133,10 @@ def adicionar_carrinho(id_produto):
 
 @app.route("/meu_carrinho", methods=["GET"])
 def meu_carrinho():
-    if "usuario_c" not in session:
+    if "email" not in session:
         return jsonify([]) # Retorna uma lista vazia se não estiver logado
         
-    email = session ["usuario_c"]["email"]
+    email = session ["email"]
     cod_carrinho = obter_carrinho(email)
     
     conexao, cursor = conectar()

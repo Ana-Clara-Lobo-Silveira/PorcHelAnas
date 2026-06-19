@@ -10,7 +10,14 @@
 
     </head>
   <body>
-
+<aside class="cart" id="cart">
+    <div class="cart__header">
+        <strong>Carrinho de Compra</strong>
+        <span id="close-cart" style="cursor:pointer;">✖</span>
+    </div>
+    <div class="cart__items" id="cart-items"></div>
+    <button class="cart__btn">Finalizar Pedido</button>
+</aside>
   <!-- Header e Navbar -->
     <header class="header">
       <div class="header__container">
@@ -41,13 +48,16 @@
           <img src="img/user.png" alt="usuario">
         </button>
 
-        <button class="header__toggle">
+        <!-- <button class="header__toggle">
           <img src="img/shopping-cart.png" alt="carrinho">
-        </button>
+        </button> -->
 
-        <button class="header__toggle" onclick="toggleCart()">
+        <!-- <button class="header__toggle" onclick="toggleCart()">
           <img src="img/shopping-cart.png" alt="carrinho">
-        </button>
+        </button> -->
+        <a class="header__toggle cart-open-btn" href="#">
+  <img src="/static/img/shopping-cart.png" alt="carrinho">
+</a>
 
         </div>
     </header>
