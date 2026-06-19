@@ -58,6 +58,9 @@ def enviar_comentario():
     id_produto = request.form.get("id_produto")
     nome = request.form.get("nome")
     comentario = request.form.get("comentario")
+
+    if "usuario_c" not in session:
+        return redirect("/pagina_login")
     
     if nome and comentario and id_produto:
         inserir_comentario(nome, comentario, id_produto)
