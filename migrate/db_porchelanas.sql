@@ -11,14 +11,6 @@ CREATE TABLE cadastro (
 
 
 
-
-CREATE TABLE IF NOT EXISTS carrinho (
- cod_carrinho INT auto_increment NOT NULL primary key,
- email VARCHAR(100)
-);
-
-
-
 CREATE TABLE IF NOT EXISTS categoria (
  id_categoria INT auto_increment NOT NULL PRIMARY KEY,
  nome_categoria VARCHAR(50)
@@ -45,17 +37,17 @@ CREATE TABLE IF NOT EXISTS comentarios (
 );
 
 
-
 CREATE TABLE IF NOT EXISTS itens_carrinho (
  cod_item INT auto_increment NOT NULL PRIMARY KEY,
  id_produto INT,
  quantidade INT,
- cod_carrinho INT
+email VARCHAR(100)
+ 
 );
 
+insert into itens_carrinho(id_produto, quantidade, email) values (32, 3, 'helena.rosa@gmail.com');
 
 
-ALTER TABLE carrinho ADD CONSTRAINT FK_carrinho_0 FOREIGN KEY (email) REFERENCES cadastro (email);
 
 
 ALTER TABLE produtos ADD CONSTRAINT FK_produtos_0 FOREIGN KEY (id_categoria) REFERENCES categoria (id_categoria);
@@ -65,7 +57,7 @@ ALTER TABLE comentarios ADD CONSTRAINT FK_comentarios_0 FOREIGN KEY (id_produto)
 
 
 ALTER TABLE itens_carrinho ADD CONSTRAINT FK_itens_carrinho_0 FOREIGN KEY (id_produto) REFERENCES produtos (id_produto);
-ALTER TABLE itens_carrinho ADD CONSTRAINT FK_itens_carrinho_1 FOREIGN KEY (cod_carrinho) REFERENCES carrinho (cod_carrinho);
+ALTER TABLE itens_carrinho ADD CONSTRAINT FK_itens_carrinho_1 FOREIGN KEY (email) REFERENCES cadastro (email);
 
 -- ------------------ INSERTS ------
 insert into categoria (nome_categoria) values ('xicaras');

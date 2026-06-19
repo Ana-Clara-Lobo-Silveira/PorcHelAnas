@@ -10,6 +10,10 @@ from model.categorias import recupera_cat_prato
 from model.categorias import recupera_cat_conj
 from model.pagina_produto import obter_comentarios
 from model.pagina_produto import inserir_comentario
+from model.carrinho import adicionar_item
+from model.carrinho import obter_carrinho
+from database.conexao import conectar
+
 
 app = Flask(__name__)
 app.secret_key = "PorcHelAnas"
@@ -107,6 +111,51 @@ def logout():
     session.clear()
     return redirect("/")
 
+
+@app.route("/adicionar_carrinho/<int:id_produto>", methods=["POST"])
+def adicionar_carrinho(id_produto):
+    if "usuario_c" not in session:
+        return redirect("/pagina_login")
+    
+    email = session["email"]
+    quantidade = 1 
+    
+    # Passo 1: Descobrimos o código do carrinho usando o e-mail
+    cod_carrinho = obter_carrinho(email)
+    
+    # Passo 2: Conectamos o carrinho com o produto e a quantidade
+    adicionar_item(cod_carrinho, id_produto, quantidade)
+    
+    # Depois de salvar no banco, para onde você quer redirecionar o usuário?
+    return redirect("/")
+
+
+
+@app.route("/meu_carrinho", methods=["GET"])
+def meu_carrinho():
+    if "usuario_c" not in session:
+        return jsonify([]) # Retorna uma lista vazia se não estiver logado
+        
+    email = session ["usuario_c"]["email"]
+    cod_carrinho = obter_carrinho(email)
+    
+    conexao, cursor = conectar()
+    
+    # Executamos o SELECT com o INNER JOIN que planejamos
+    query = """
+        SELECT i.quantidade, p.nome_produto, p.preco, p.imagem_produto 
+        FROM itens_carrinho i
+        INNER JOIN produtos p ON i.id_produto = p.id_produto
+        WHERE i.cod_carrinho = %s
+    """
+    cursor.execute(query, (cod_carrinho,))
+    
+    # Pegamos todos os itens do banco
+    itens = cursor.fetchall() 
+    conexao.close()
+    
+    # Transformamos os dados em JSON para o JavaScript conseguir ler
+    return jsonify(itens)
 
 
 if __name__ == "__main__":
