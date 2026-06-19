@@ -98,6 +98,7 @@ def pg_login():
 
     if usuario_conectado:
         session["usuario_c"] = usuario_conectado
+        session["email"] = email
         return redirect("/")
     else:
         return redirect("/pagina_login")
