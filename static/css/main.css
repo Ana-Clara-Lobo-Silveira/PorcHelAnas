@@ -37,7 +37,7 @@ body {
     align-items: center;
     background: var(--branco-puro); 
     padding: 20px;
-    width: 100vw;
+    width: 100%;
     border-bottom: 1px solid var(--bege-suave); /* Linha fina e sutil usando o bege */
 }
 
@@ -167,7 +167,6 @@ body {
     width: 100%;
     background-color: #FAF6EE; /* Fundo Creme Off-white */
     position: relative;
-    margin-top: 100px;
     padding-top: 0;
 }
 
@@ -252,8 +251,8 @@ body {
 .col-links {
     align-items: center;
     min-width: 120px;
-}
 
+}
 .icone-cabecalho {
     width: 44px;
     height: 44px;
@@ -396,7 +395,9 @@ body {
     font-size: 13px;
     color: #625D55;
 }
-
+.fa-brands{
+    color: #F6EDDF;
+}
 .footer-bottom p {
     margin: 0;
 }

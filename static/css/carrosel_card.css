@@ -34,7 +34,7 @@
 .principal {
     max-width: 100%;    /* Força o container a usar todo o espaço disponível */
     width: 95%;         /* Deixa uma margem sutil nas laterais */
-    margin: 60px auto;
+    margin: 60px 20px;
     padding: 0;         /* Zeramos o padding para não empurrar os cards */
     display: flex;
     gap: 20px;          /* Diminuímos um pouco o espaço para garantir que caibam 4 */

@@ -99,3 +99,13 @@
             color: #333;
             font-weight: 600;
         }
+
+
+    max-width: 100%;    /* Força o container a usar todo o espaço disponível */
+    width: 95%;         /* Deixa uma margem sutil nas laterais */
+    margin: 60px auto;
+    padding: 0;         /* Zeramos o padding para não empurrar os cards */
+    display: flex;
+    gap: 20px;          /* Diminuímos um pouco o espaço para garantir que caibam 4 */
+    justify-content: center;
+    flex-wrap: wrap; 

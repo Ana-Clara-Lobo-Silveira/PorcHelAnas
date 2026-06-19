@@ -6,10 +6,10 @@ body {
 }
 
 .produto-container {
-    max-width: 1200px;       /* Define uma largura máxima para o conteúdo não espalhar infinito */
-    margin: 40px auto;       /* 40px de espaço no topo/subida e 'auto' centraliza o bloco na tela */
+    max-width: 1400px;       /* Define uma largura máxima para o conteúdo não espalhar infinito */
+    margin: 40px 20px;       /* 40px de espaço no topo/subida e 'auto' centraliza o bloco na tela */
     padding: 0 20px;         /* Garante um espaço mínimo de 20px nas laterais para nunca grudar na borda */
-    
+    align-items: center;
     /* Caso você use display flex para alinhar o carrossel e o texto lado a lado */
     display: flex;
     gap: 40px;               /* Dá um espaço bem legal entre a imagem e as informações do produto */
@@ -53,24 +53,7 @@ body {
     margin: 8px 0 4px 0;
 }
 
-/* Estrelas gerais do Produto */
-.produto-estrelas {
-    margin-bottom: 16px;
-}
 
-.estrela-acesa {
-    color: #E69055; /* Laranja para as estrelas ativas */
-}
-
-.estrela-apagada {
-    color: #F7D8CA; /* Tom bem claro para as estrelas vazias */
-}
-
-.nota-texto {
-    font-size: 14px;
-    color: #A36F3D;
-    margin-left: 5px;
-}
 
 /* Descrição */
 .produto-descricao {
@@ -87,7 +70,9 @@ body {
     gap: 20px;
     margin-bottom: 24px;
 }
-
+.produto-compra-container p{
+    margin: 0;
+}
 /* Preço Destacado */
 .produto-preco {
     color: #A36F3D; /* Castanho */
@@ -95,7 +80,6 @@ body {
     font-weight: 800;
     margin: 0;
 }
-
 /* Botão Redondo do Carrinho */
 .botao-carrinho {
     background-color: #165f86; /* Verde Sálvia */
@@ -122,6 +106,7 @@ body {
     border-radius: 8px;
     padding: 24px;
     margin-top: 20px;
+
 }
 
 .produto-comentarios h3 {
@@ -129,6 +114,33 @@ body {
     margin-top: 0;
     margin-bottom: 16px;
     font-size: 20px;
+}
+/* ---- ADICIONA SCROLL APENAS NA LISTA DE COMENTÁRIOS ---- */
+/* ---- VERSÃO CORRIGIDA DO SCROLL ---- */
+.lista-comentarios-scroll {
+    display: block !important;    /* Força a div a se comportar como um bloco isolado */
+    height: 150px;                /* Altura fixa (mude para o tamanho que achar melhor) */
+    overflow-y: scroll !important; /* Força a barra de rolagem vertical a existir */
+    padding-right: 10px;          /* Espaço para o texto não colar na barra */
+}
+
+/* Customização opcional da barra de rolagem (Deixa ela combinando com seu layout azul) */
+.lista-comentarios-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.lista-comentarios-scroll::-webkit-scrollbar-track {
+    background: #F8F3EA; 
+    border-radius: 4px;
+}
+
+.lista-comentarios-scroll::-webkit-scrollbar-thumb {
+    background: #165f86; 
+    border-radius: 4px;
+}
+
+.lista-comentarios-scroll::-webkit-scrollbar-thumb:hover {
+    background: #0f4461; 
 }
 
 /* Div interna do comentário individual */
@@ -229,4 +241,7 @@ body {
 .btn-enviar-comentario:active {
     transform: translateY(0);
 }
-
+.content-wrapper{
+    display: flex;
+    justify-content: center;
+}

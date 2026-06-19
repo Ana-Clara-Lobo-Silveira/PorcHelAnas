@@ -28,14 +28,10 @@
             </p>
             
             <div class="produto-compra-container">
-                <div class="produto-preco">{{produto.preco}}</div>
+                <div class="produto-preco"><p>R$ {{produto.preco}}</p></div>
                 
                 <button class="botao-carrinho" aria-label="Adicionar ao carrinho">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="9" cy="21" r="1"></circle>
-                        <circle cx="20" cy="21" r="1"></circle>
-                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                    </svg>
+                    <img src="/static/img/shopping-cart.png" alt="">
                 </button>
             </div>
             
@@ -44,24 +40,26 @@
                 <form action="/e_comentario" method="POST" class="form-comentario">
                 <input type="hidden" value="{{id_produto}}" name="id_produto">
                 
-                <label for="nome">Nome: </label>
-                <input type="text" name="nome" placeholder="Seu nome">
-
                 <label for="comentario">Adicionar comentário: </label>
-                <input class="campo_full" type="text" name="comentario" placeholder="Escreva seu comentário...">
+                <input class="campo_full" type="text" name="comentario" placeholder="Escreva seu comentário..." required>
                 
                     <div class="full">
                     <button type="submit" class="btn-enviar-comentario">Enviar comentário</button>
                     </div>
                 </form>
-                {% for comentario in comentarios %}
+                <div class="lista-comentarios-scroll">
+                                  {% for comentario in comentarios %}
                 <div class="comentario-item">
                     <div class="comentario-header">
                         <strong class="comentario-autor">{{comentario.nome_completo}}</strong>
+
                     </div>
                     <p class="comentario-texto">{{comentario.comentario}}</p>
                 </div>
-                {% endfor %}
+
+                {% endfor %}  
+                </div>
+
             </div>
         </div>
 
