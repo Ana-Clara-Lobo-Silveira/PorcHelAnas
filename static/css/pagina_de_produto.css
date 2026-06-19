@@ -6,10 +6,10 @@ body {
 }
 
 .produto-container {
-    max-width: 1200px;       /* Define uma largura máxima para o conteúdo não espalhar infinito */
-    margin: 40px auto;       /* 40px de espaço no topo/subida e 'auto' centraliza o bloco na tela */
+    max-width: 1400px;       /* Define uma largura máxima para o conteúdo não espalhar infinito */
+    margin: 40px 20px;       /* 40px de espaço no topo/subida e 'auto' centraliza o bloco na tela */
     padding: 0 20px;         /* Garante um espaço mínimo de 20px nas laterais para nunca grudar na borda */
-    
+    align-items: center;
     /* Caso você use display flex para alinhar o carrossel e o texto lado a lado */
     display: flex;
     gap: 40px;               /* Dá um espaço bem legal entre a imagem e as informações do produto */
@@ -53,24 +53,7 @@ body {
     margin: 8px 0 4px 0;
 }
 
-/* Estrelas gerais do Produto */
-.produto-estrelas {
-    margin-bottom: 16px;
-}
 
-.estrela-acesa {
-    color: #E69055; /* Laranja para as estrelas ativas */
-}
-
-.estrela-apagada {
-    color: #F7D8CA; /* Tom bem claro para as estrelas vazias */
-}
-
-.nota-texto {
-    font-size: 14px;
-    color: #A36F3D;
-    margin-left: 5px;
-}
 
 /* Descrição */
 .produto-descricao {
@@ -87,7 +70,9 @@ body {
     gap: 20px;
     margin-bottom: 24px;
 }
-
+.produto-compra-container p{
+    margin: 0;
+}
 /* Preço Destacado */
 .produto-preco {
     color: #A36F3D; /* Castanho */
@@ -256,4 +241,7 @@ body {
 .btn-enviar-comentario:active {
     transform: translateY(0);
 }
-
+.content-wrapper{
+    display: flex;
+    justify-content: center;
+}
