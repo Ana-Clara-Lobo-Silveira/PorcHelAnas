@@ -55,16 +55,21 @@ def pagina_produto(id_produto):
 
 @app.route("/e_comentario", methods=["POST"])
 def enviar_comentario():
-    id_produto = request.form.get("id_produto")
-    nome = request.form.get("nome")
-    comentario = request.form.get("comentario")
-
     if "usuario_c" not in session:
-        return redirect("/pagina_login")
+        return redirect("/pagina_login")  
+
+
+    id_produto = request.form.get("id_produto")
+    comentario = request.form.get("comentario")
+    nome_completo = session['usuario_c']['nome_completo']
+
+
     
-    if nome and comentario and id_produto:
-        inserir_comentario(nome, comentario, id_produto)
+    if comentario and id_produto:
+        inserir_comentario(nome_completo, comentario, id_produto)
     return redirect(url_for("pagina_produto", id_produto=id_produto))
+
+
 # PÁGINA CADASTRO---------------------------
 @app.route("/pagina_cadastro", methods = ["GET"])
 def pagina_cadastro():
