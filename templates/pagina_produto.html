@@ -9,30 +9,12 @@
         <div class="produto-galeria">
             <div id="carrosselProduto" class="carousel slide" data-bs-ride="carousel">
                 
-                <div class="carousel-indicators">
-                        <button type="button" 
-                            data-bs-target="#carrosselProduto" 
-                            data-bs-slide-to="1" 
-                            class="active" 
-                            aria-current="true" 
-                            aria-label="Slide 1">
-                        </button>
-                </div>
 
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
+                    <div>
                         <img src="{{ produto.imagem_produto }}" class="d-block w-100" alt="{{produto.nome_produto}}">
                     </div>
 
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#carrosselProduto" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Anterior</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carrosselProduto" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Próximo</span>
-                </button>
                 </div>
             </div>
         </div>
@@ -59,6 +41,19 @@
             
             <div class="produto-comentarios">
                 <h3>Comentários dos Clientes</h3>
+                <form action="/e_comentario" method="POST" class="form-comentario">
+                <input type="hidden" value="{{id_produto}}" name="id_produto">
+                
+                <label for="nome">Nome: </label>
+                <input type="text" name="nome" placeholder="Seu nome">
+
+                <label for="comentario">Adicionar comentário: </label>
+                <input class="campo_full" type="text" name="comentario" placeholder="Escreva seu comentário...">
+                
+                    <div class="full">
+                    <button type="submit" class="btn-enviar-comentario">Enviar comentário</button>
+                    </div>
+                </form>
                 {% for comentario in comentarios %}
                 <div class="comentario-item">
                     <div class="comentario-header">

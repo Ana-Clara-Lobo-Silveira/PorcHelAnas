@@ -30,11 +30,6 @@ body {
     height: 500px; /* Define uma altura padrão para as fotos no carrossel */
 }
 
-/* Customização dos botões do Carrossel para combinarem com a paleta */
-.carousel-indicators [data-bs-target] {
-    background-color: #E69055; /* Laranja queimado nos traços do carrossel */
-}
-
 /* Lado Direito: Textos (40% do espaço) */
 .produto-detalhes {
     flex: 40;
@@ -142,6 +137,7 @@ body {
     border-left: 4px solid #165f86; /* Detalhe lateral verde sálvia */
     padding: 15px;
     border-radius: 4px;
+    margin-bottom: 10px;
 }
 
 .comentario-header {
@@ -164,5 +160,73 @@ body {
     color: #555555;
     font-size: 14px;
     margin: 0;
+}
+
+.form-comentario {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 30px; /* Espaço antes da lista de comentários */
+    background-color: #FFFFFF;
+    padding: 10px 0;
+}
+
+/* Rótulos (Labels) */
+.form-comentario label {
+    font-size: 14px;
+    color: #A36F3D; /* Castanho idêntico aos títulos */
+    font-weight: 600;
+    margin-bottom: -8px; /* Aproxima o label do seu respectivo input */
+}
+
+/* Campos de Entrada (Inputs e Textarea) */
+.form-comentario input[type="text"],
+.form-comentario textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #F7D8CA; /* Tom claro suave para as bordas */
+    border-radius: 6px;
+    background-color: #F8F3EA; /* Fundo Off-White combinando com a página */
+    color: #555555;
+    font-family: inherit;
+    font-size: 14px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+}
+
+/* Altura ideal para a caixa de texto */
+.form-comentario textarea {
+    height: 100px;
+    resize: vertical; /* Permite o usuário esticar apenas para baixo */
+}
+
+/* Efeito de Clique/Foco nos Campos */
+.form-comentario input[type="text"]:focus,
+.form-comentario textarea:focus {
+    border-color: #165f86; /* Borda destaca em azul ao clicar */
+    box-shadow: 0 0 0 3px rgba(22, 95, 134, 0.1); /* Sombra suave azul */
+}
+
+/* Botão de Enviar */
+.btn-enviar-comentario {
+    background-color: #165f86; /* Azul idêntico ao botão do carrinho */
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    align-self: flex-start; /* Faz o botão ocupar apenas o tamanho do texto */
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-enviar-comentario:hover {
+    background-color: #0f4461; /* Tom de azul ligeiramente mais escuro no hover */
+    transform: translateY(-1px);
+}
+
+.btn-enviar-comentario:active {
+    transform: translateY(0);
 }
 

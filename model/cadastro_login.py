@@ -13,9 +13,9 @@ def cadastro (nome_completo, email, telefone, endereco, senha):
         return False
     
 def login (email, senha) -> list:
-        con, cur  = conectar()
-        cur.execute("SELECT nome_completo, email, senha FROM cadastro WHERE  email = %s AND senha=%s", [email, senha])
-        login_executado = cur.fetchone()
-        con.close()
+        conexao, cursor  = conectar()
+        cursor.execute("SELECT nome_completo, email, senha FROM cadastro WHERE  email = %s AND senha=%s", [email, senha])
+        login_executado = cursor.fetchone()
+        conexao.close()
 
         return login_executado
