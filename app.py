@@ -3,11 +3,7 @@ from model.cadastro_login import cadastro
 from model.cadastro_login import login
 from model.cards import recupera_card
 from model.pagina_produto import recupera_produto
-from model.categorias import recupera_cat_xic
-from model.categorias import recupera_cat_bule
-from model.categorias import recupera_cat_dec
-from model.categorias import recupera_cat_prato
-from model.categorias import recupera_cat_conj
+from model.categorias import recupera_cat_xic, recupera_cat_bule, recupera_cat_dec, recupera_cat_conj, recupera_cat_prato
 from model.pagina_produto import obter_comentarios
 from model.pagina_produto import inserir_comentario
 
