@@ -59,8 +59,18 @@
             
             <div class="produto-comentarios">
                 <h3>Comentários dos Clientes</h3>
-                <form action="">
-                    <input type="hidden" value="{{}}">
+                <form action="/e_comentario" method="POST">
+                <input type="hidden" value="{{id_produto}}" name="id_produto">
+                
+                <label for="nome">Nome: </label>
+                <input type="text" name="nome" placeholder="Seu nome">
+
+                <label for="comentario">Adicionar comentário: </label>
+                <input class="campo_full" type="text" name="comentario" placeholder="Escreva seu comentário...">
+                
+                    <div class="full">
+                    <button type="submit">Enviar comentário</button>
+                    </div>
                 </form>
                 {% for comentario in comentarios %}
                 <div class="comentario-item">

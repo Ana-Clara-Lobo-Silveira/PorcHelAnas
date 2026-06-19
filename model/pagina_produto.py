@@ -16,7 +16,7 @@ def obter_comentarios(id_produto):
     conexao, cursor = conectar()
     cursor.execute(
             """
-            select cod_comentario, nome_completo, id_produto, comentarios from comentarios where id_produto = %s
+            select cod_comentario, nome_completo, id_produto, comentario from comentarios where id_produto = %s
 
             """, [id_produto]
     )
@@ -26,11 +26,11 @@ def obter_comentarios(id_produto):
     return comentarios
         
 
-def inserir_comentario(nome_completo, comentario):
+def inserir_comentario(nome_completo, comentario, id_produto):
     conexao, cursor = conectar()
     cursor.execute(
             """
-            insert into comentario (nome_completo,comentario) values (%s,%s)""", [nome_completo, comentario]
+            insert into comentarios (nome_completo,comentario,id_produto) values (%s,%s,%s)""", [nome_completo, comentario, id_produto]
     )
     conexao.commit()
     conexao.close()
