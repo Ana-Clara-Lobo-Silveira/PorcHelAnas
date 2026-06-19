@@ -14,19 +14,19 @@
     <div class="main__content">
         <form action="/pagina_cadastro", method="post">
         <label>Nome completo:</label>
-        <input type="text" name="nome" placeholder="Ex: Maria Calafati Silveira">
+        <input type="text" name="nome" placeholder="Ex: Maria Calafati Silveira" required>
         
         <label>Email:</label>
-        <input type="text" name="email" placeholder="Ex: maria.c.s@gmail.com">
+        <input type="text" name="email" placeholder="Ex: maria.c.s@gmail.com" required>
 
         <label>Telefone:</label>
-        <input type="text" name="telefone" placeholder="Ex: (00) 00000-0000">
+        <input type="text" name="telefone" placeholder="Ex: (00) 00000-0000" required>
 
         <label>Endereço:</label>
-        <input type="text" name="endereco" placeholder="Ex: Rua Hugo Negrini, 60 - Vila Bela Vista">
+        <input type="text" name="endereco" placeholder="Ex: Rua Hugo Negrini, 60 - Vila Bela Vista" required>
         
         <label>Senha (até 10 caracteres):</label>
-        <input type="password" name="senha" maxlength="10">
+        <input type="password" name="senha" maxlength="10" required>
         
         <button type="submit">Cadastre-se</button>
     </form>
